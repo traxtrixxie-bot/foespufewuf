@@ -22,7 +22,6 @@ lb config \
   --archive-areas "main restricted universe multiverse" \
   --binary-images iso-hybrid \
   --bootappend-live "boot=live components quiet splash" \
-  --debian-installer none \
   --mirror-bootstrap http://archive.ubuntu.com/ubuntu/ \
   --mirror-binary http://archive.ubuntu.com/ubuntu/ \
   --mirror-chroot-security http://security.ubuntu.com/ubuntu/ \
