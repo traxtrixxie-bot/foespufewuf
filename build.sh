@@ -11,7 +11,7 @@ fi
 echo "==> Installing build dependencies (live-build, grub, plymouth, librsvg)..."
 apt-get update
 apt-get install -y live-build live-boot live-config grub-pc-bin grub-efi-amd64-bin \
-  grub2-common syslinux-utils plymouth-themes librsvg2-bin xorriso mtools dosfstools
+  grub2-common syslinux-common plymouth-themes librsvg2-bin xorriso mtools dosfstools
 
 echo "==> Cleaning any previous build..."
 lb clean --purge || true
@@ -27,7 +27,7 @@ lb config \
   --mirror-chroot-security http://security.ubuntu.com/ubuntu/ \
   --mirror-binary-security http://security.ubuntu.com/ubuntu/ \
   --apt-indices false \
-  --apt-recommends true \
+  --apt-recommends false \
   --iso-application "Anonymous-OS Live" \
   --iso-publisher "Custom Build" \
   --iso-volume "ANONYMOUS-OS"
