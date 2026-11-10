@@ -1,0 +1,21 @@
+name: Build Anonymous-OS ISO
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out project files
+        uses: actions/checkout@v4
+
+      - name: Build the ISO
+        run: sudo bash build.sh
+
+      - name: Upload ISO as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anonymous-os-remake-iso
+          path: anonymous-os-remake.iso
+          retention-days: 14
